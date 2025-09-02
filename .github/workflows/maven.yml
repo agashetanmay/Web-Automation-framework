@@ -1,11 +1,3 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
 name: Test Automation Framework
 
 on:
@@ -34,14 +26,14 @@ jobs:
       run: mvn test -X -Dbrowsername=chrome -DisHeadless=true -DisLambdaTest=false -DtestSuiteFile=test.xml
       
     - name: Upload a Test Logs
-      if: ()always
+      if: always()
       uses: actions/upload-artifact@v4.6.2
       with:
         name: test logs
         path: logs/
 
     - name: Upload a Test report
-      if: ()always
+      if: always()
       uses: actions/upload-artifact@v4.6.2
       with:
         name: test report
