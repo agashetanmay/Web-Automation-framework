@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +22,8 @@ jobs:
         cache: maven
         
     - name: Running test automation framework with maven
-      run: mvn test -X -DbrowserName=chrome -DisHeadless=true -DisLambdaTest=false -DtestSuiteFile=test.xml
-      
+      run: mvn test -DbrowserName=chrome -DisHeadless=true -DisLambdaTest=false -DtestSuiteFile=test.xml -X
+       
     - name: Upload a Test Logs
       if: always()
       uses: actions/upload-artifact@v4.6.2
