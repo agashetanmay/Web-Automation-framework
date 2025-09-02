@@ -1,39 +1,45 @@
 name: Test Automation Framework
-'on':
+on:
   schedule:
-    - cron: 30 23 * * *
+    - cron: "18 23 * * *"
   push:
     branches:
       - master
   pull_request:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: temurin
           cache: maven
+
       - name: Running test automation framework with maven
-        run: >-
-          mvn test -DbrowserName=chrome -DisHeadless=true -DisLambdaTest=false
+        run: >
+          mvn test -DbrowserName=chrome -DisHeadless=false -DisLambdaTest=true
           -DtestSuiteFile=test.xml -X
-      - name: Upload a Test Logs
+
+      - name: Upload Test Logs
         if: always()
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v4
         with:
-          name: test logs
+          name: test-logs
           path: logs/
-      - name: Upload a Test report
+
+      - name: Upload Test Report
         if: always()
-        uses: actions/upload-artifact@v4.6.2
+        uses: actions/upload-artifact@v4
         with:
-          name: test report
+          name: test-report
           path: report.html
+
       - name: Test Execution status
         run: echo "Test execution is completed"
