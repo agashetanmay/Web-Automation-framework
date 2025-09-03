@@ -15,7 +15,7 @@ public class JSONUtility {
 		Gson gson = new Gson();
 		File JsonFile = new File(
 			    System.getProperty("user.dir") 
-			    + File.separator + "config" 
+			    + File.separator + "config"                 //this file.seperator help in both CI tool and local execution
 			    + File.separator + "config.json"
 			);
 		FileReader filereader = null;
