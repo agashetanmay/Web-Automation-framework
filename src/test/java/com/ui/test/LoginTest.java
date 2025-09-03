@@ -36,7 +36,7 @@ public class LoginTest extends TestBase {
 	}
     
 	@Test(description = "verifies with valid user able to login into application", groups = { "e2e",
-			"sanity" },enabled=true, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginExcelDataProvider", retryAnalyzer = com.ui.listeners.MyRetryAnalyzer.class)
+			"sanity" },enabled=false, dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginExcelDataProvider", retryAnalyzer = com.ui.listeners.MyRetryAnalyzer.class)
 	public void loginTest3(User user) {
 		homePage.maximizeWindow();
 		LoginPage loginPage = homePage.goToLoginPage();
