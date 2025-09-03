@@ -54,16 +54,16 @@ jobs:
       - name: copy report to gh page folder
         if: always()
 
-      #   run: |
-      #     mkdir -p public/extent-reports
-      #     cp -R report.html public/extent-reports/
-      #     cp -R screenshots/ public/extent-reports/screenshots
+        run: |
+          mkdir -p public/extent-reports
+          cp -R report.html public/extent-reports/
+          cp -R screenshots/ public/extent-reports/screenshots
           
-      # - name: Deploy 🚀
-      #   if: always()
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     folder: public/extent-reports/
-      #     token: ${{ secrets.WEB123 }}
-      #     clean: true
+      - name: Deploy 🚀
+        if: always()
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public/extent-reports/
+          token: ${{ secrets.WEB123 }}
+          clean: true
         
