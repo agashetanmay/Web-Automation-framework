@@ -42,14 +42,14 @@ public class TestBase {
 		return homePage;
 	}
 
-//	@AfterMethod
-//	public void TearDown() {
-//		if (isLambdaTest) {
-//			LambdaTestUtility.quitSession(); // this will quit the broser session in lambda test
-//		} else {
-//			homePage.quit(); // this will quit the session on locale
-//		}
+	@AfterMethod
+	public void TearDown() {
+		if (isLambdaTest) {
+			LambdaTestUtility.quitSession(); // this will quit the broser session in lambda test
+		} else {
+			homePage.quit(); // this will quit the session on locale
+		}
 
-//	}
+	}
 
 }
