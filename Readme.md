@@ -7,7 +7,7 @@ A robust Web Automation Framework built with Java, leveraging TestNG for test ma
 ## Authors
 
 - [@Tanmay](https://github.com/agashetanmay)
-Email ID : agashetanmay@gmail.com
+- Email ID : agashetanmay@gmail.com
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/agashetanmay)
@@ -83,3 +83,4 @@ You can view the HTML reports at:
 
 
     
+
