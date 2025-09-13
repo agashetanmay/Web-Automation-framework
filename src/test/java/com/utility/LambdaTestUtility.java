@@ -49,21 +49,5 @@ public class LambdaTestUtility {
 		 if(driverLocal.get()!=null) {
 			 driverLocal.get().quit();
 		 }
-	 }
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+	 } 
 }

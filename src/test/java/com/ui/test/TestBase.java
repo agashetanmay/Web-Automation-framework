@@ -22,10 +22,7 @@ public class TestBase {
     
 	@Parameters({"browserName","isHeadless","isLambdaTest"})
 	@BeforeMethod(description = "load home page of website")
-	
-	public void setup(@Optional("chrome")String browserName,
-			@Optional("false")boolean isHeadless, 
-			@Optional("false")boolean isLambdaTest,ITestResult result) {
+	public void setup(@Optional("chrome")String browserName,@Optional("false")boolean isHeadless, @Optional("false")boolean isLambdaTest,ITestResult result) {
 		
 		WebDriver LambdaDriver;
 		browser browserEnum = browser.valueOf(browserName.toUpperCase());
@@ -38,21 +35,21 @@ public class TestBase {
 		} else {
 			homePage = new HomePage( browserEnum, isHeadless); // this will accept browser and headless boolean value
 			logger.info("Loads homepage of website");
+			homePage.maximizeWindow();
 		}
 	}
-
 	public BrowserUtility getInstance() {
 		return homePage;
 	}
 
-	@AfterMethod
-	public void TearDown() {
-		if (isLambdaTest) {
-			LambdaTestUtility.quitSession(); // this will quit the broser session in lambda test
-		} else {
-			homePage.quit(); // this will quit the session on locale
-		}
+//	@AfterMethod
+//	public void TearDown() {
+//		if (isLambdaTest) {
+//			LambdaTestUtility.quitSession(); // this will quit the broser session in lambda test
+//		} else {
+//			homePage.quit(); // this will quit the session on locale
+//		}
 
-	}
+//	}
 
 }
