@@ -8,7 +8,7 @@ public class loggerUtility {
 //	private static Logger logger;    //we are following singleton design pattern, so to create an object at 
 	                                      //once we are making this varible as static
 	
-	private loggerUtility() {    //making private beacuse no one should able to create objectof class
+	private loggerUtility() {    //making private beacuse no one should able to create object of class
 		
 	}
 	

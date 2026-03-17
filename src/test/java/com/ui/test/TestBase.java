@@ -48,11 +48,9 @@ public class TestBase {
 			LambdaTestUtility.quitSession(); // this will quit the broser session in lambda test
 		} else {
 			homePage.quit(); // this will quit the session on locale
+			logger.info("quite the driver execution");
 		}
 
 	}
 
 }
-
-
-

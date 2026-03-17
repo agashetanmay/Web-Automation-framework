@@ -31,7 +31,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.constants.browser;
 import com.ui.pages.AddressPage;
 
-public class BrowserUtility {
+public abstract class BrowserUtility {
 	Logger logger = loggerUtility.getLogger(this.getClass());
 	private WebDriverWait wait;
 
@@ -113,6 +113,7 @@ public class BrowserUtility {
 //		 driver.get(url);
 		getDriver().get(url);
 		logger.info("visiting to the website" + url);
+		
 
 	}
 
@@ -189,7 +190,7 @@ public class BrowserUtility {
 		try {
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 			((JavascriptExecutor) driver)
-					.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", locator);
+	        .executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", locator);
 			logger.info("element found and user scroll the page untile locator" + locator);
 		} catch (TimeoutException e) {
 			System.out.println("Element not found within timeout: " + locator);
