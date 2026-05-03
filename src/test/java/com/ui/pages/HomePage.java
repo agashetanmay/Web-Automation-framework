@@ -11,6 +11,7 @@ import com.utility.JSONUtility;
 
 public final class HomePage extends BrowserUtility {
 	
+	
 private static final By SIGN_IN_LINK_LOCATOR = By.xpath("//a[@class='login']");
 	
 	 public HomePage(browser broswerName, boolean isHeadless) { //this constructor accept browsername and headless boolean value
@@ -20,6 +21,7 @@ private static final By SIGN_IN_LINK_LOCATOR = By.xpath("//a[@class='login']");
 	 public HomePage(WebDriver driver) {   //This constructor accepts browsername
 			super(driver);    //To call parent class constructor (browserUtility class) from child class constructor
 			goToWebsite(JSONUtility.readJSON(Env.QA).getUrl());
+		
 		}
 
      public LoginPage goToLoginPage() {
